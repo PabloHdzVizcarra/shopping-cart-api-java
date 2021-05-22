@@ -19,7 +19,7 @@ public class ArticleController {
     this.articleService = articleService;
   }
 
-  @CrossOrigin(origins = "http:localhost:8080")
+  @CrossOrigin(origins = "http://localhost:8080")
   @GetMapping
   public List<Article> Test() {
     return articleService.getArticles();
