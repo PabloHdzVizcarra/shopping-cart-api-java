@@ -3,6 +3,8 @@ package com.example.shoppingcartapi.article;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Entity
@@ -20,8 +22,14 @@ public class Article {
   )
   private Long id;
 
+
+  @NotBlank(message = "name is mandatory")
   private String name;
+
+  @NotBlank(message = "brand is mandatory")
   private String brand;
+
+  @NotBlank(message = "price is mandatory")
   private int price;
 
   @CreationTimestamp
